@@ -1,6 +1,5 @@
 import java.util.*;
 class CrainGameWithKakao {
-
     public static void main(String[] args){
         CrainGameWithKakao cgwk = new CrainGameWithKakao();
         int[][] board = {{0,0,0,0,0},{0,0,1,0,3},{0,2,5,0,1},{4,2,4,4,2},{3,5,1,3,1}};
