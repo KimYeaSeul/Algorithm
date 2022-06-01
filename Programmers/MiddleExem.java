@@ -1,4 +1,3 @@
-package com.example.demo;
 import java.util.*;
 public class MiddleExem {
 public static void main(String[] args) {
