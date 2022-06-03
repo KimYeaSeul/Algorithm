@@ -3,7 +3,7 @@ public class PhoneBook {
 
   public static void main(String[] args) {
     PhoneBook pb = new PhoneBook();
-    String[] phone_book={{"119","97674223","11955245421"}};
+    String[] phone_book={"119","97674223","11955245421"};
     // false
     System.out.println(pb.solution(phone_book));
   }
