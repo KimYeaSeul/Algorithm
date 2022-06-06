@@ -1,3 +1,4 @@
+import java.util.Stack;
 public class StockPrice {
   public static void main(String[] args) {
     StockPrice sp = new StockPrice();
@@ -11,19 +12,24 @@ public class StockPrice {
     System.out.print("}");
   }
   public int[] solution(int[] prices) {
-    int[] answer = new int[prices.length];
+    int leng = prices.length;
+    int[] answer = new int[leng];
 
-    int low=0;
-    for(int i=0; i<prices.length; i++){
-        int now = prices[i];
-        low = 0;
-        for(int j=i+1; j<prices.length; j++){
-            low++;
-            if(prices[j] < now) break;
+    Stack<Integer> s = new Stack<>();
+    
+    s.push(0);
+    for(int i=1; i<leng; i++){
+        while(!s.empty() && prices[s.peek()] > prices[i]){
+            int idx = s.pop();
+            answer[idx] = i-idx;
         }
-        // System.out.println("now = " + now + "low = " +low);
-        answer[i] = low;
+        s.push(i);
+    }
+    
+    while(!s.empty()){
+        int idx = s.pop(); 
+        answer[idx] = leng - idx - 1;
     }
     return answer;
-}
+  }
 }
