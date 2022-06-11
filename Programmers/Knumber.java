@@ -1,22 +1,22 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Knumber {
+  public static void main(String[] args) {
+    Knumber kn = new Knumber();
+    int[] array = {1, 5, 2, 6, 3, 7, 4};
+    int[][] commands = {{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
+    int[] result = kn.solution(array, commands);
+    //[5, 6, 3]
+    for(int r : result ) System.out.print(r+ ", ");
+  }
   public int[] solution(int[] array, int[][] commands) {
     int[] answer = new int[commands.length];
-    List<Integer> list = new ArrayList<>();
-
-    for(int i=0; i < commands.length; i++){
-        int start =commands[i][0]-1;
-        int end = commands[i][1];
-        for(int j=start; j<end; j++){
-            list.add(array[j]);
+        for(int i=0; i<commands.length; i++){
+            int[] temp = Arrays.copyOfRange(array, commands[i][0]-1, commands[i][1]);
+            Arrays.sort(temp);
+            answer[i] = temp[commands[i][2]-1];
         }
-        list.sort(Comparator.naturalOrder());
-        answer[i] = list.get(commands[i][2]-1);
-        list.clear();
-    }        
-    return answer;
+
+        return answer;
   }
 }
