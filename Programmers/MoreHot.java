@@ -20,7 +20,7 @@ class MoreHot {
       scv = n1 + (n2 * 2);
       pq.add(scv);
       answer++;
-    }
+    } 
     return pq.peek() < K ? -1 : answer ;
   }
 }
