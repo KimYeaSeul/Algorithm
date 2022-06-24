@@ -27,7 +27,12 @@ public class BigNumber {
       
     });
       
-    answer = String.join("", listInt);
+    StringBuilder stringBuilder = new StringBuilder();
+    for (int i = 0; i < listInt.size(); i++){
+        stringBuilder.append(listInt.get(i));
+    }
+    answer = stringBuilder.toString();
+
     // 0 으로 시작한다는건 뒤에가 다 0이라는거지
     // 0보다 큰수가 있으면 맨 앞으로 왔을테니까!
     if(answer.startsWith("0"));
