@@ -26,7 +26,7 @@ public class BigNumber {
       }
       
     });
-      
+    String.join("", listInt);
     StringBuilder stringBuilder = new StringBuilder();
     for (int i = 0; i < listInt.size(); i++){
         stringBuilder.append(listInt.get(i));
@@ -39,3 +39,19 @@ public class BigNumber {
     return answer;
   }
 }
+// 얘는 안나오네?
+// String answer = "";
+//         answer = Arrays.stream(numbers)
+//         .mapToObj(String::valueOf)
+//         .sorted((s1, s2) -> -s1.concat(s2).compareTo(s2.concat(s1)))
+//         .reduce("", (s1, s2) -> s1.equals("0") && s2.equals("0") ? "0" : s1.concat(s2));
+//         return answer;
+// // 얘는 stream import하라고 나오고 // lexical compare?
+// List<String> result = Arrays.stream(numbers)
+//   .mapToObj(n -> String.valueOf(n))
+//   .collect(Collectors.toList());
+// Collections.sort(result, (s1, s2) -> (s2+s1).compareTo(s1+s2));
+
+// if(result.get(0).equals("0")) {  return "0"; }
+
+// return result.stream().collect(Collectors.joining());
